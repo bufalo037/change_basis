@@ -1,32 +1,27 @@
 ===============================================================================
 
 								Costea Mihai
-									322CB
-									Tema1
+									
 ===============================================================================
 
-Tema este destul de streight-forward, va verifica prima data daca baza aleasa 
-este buna si daca nu este va afisa mesajul de eroare si se va verifica 
-urmatoarea baza.Odata ce a gasit o baza satisfacatoare prin apelul de 
-change_base va schimba baza. Acest lucru se face prin intermediul instructunii
-divide care primeste ca parametrii deimpartitul impartitorul si un pointer la
-o adresa rezervata pe stiva unde se va salva restul prin efect lateral in urma
-impartirii.Procedura susmentionata va returna catul impartirii. Restul este 
-luat din adresa rezervata pe stiva si pus intr-o in memorie intr-un vetor. In 
-urma impartirilor repetate cand catul ajunge 0 in final se va afisa vectorul in
-ordine inversa, si oice rest ai mare de 10 va fi convertit la char prin
-intermediul jumpului catre etichata printchar.
-
+Firstly, it checks if the chosen base is good. If it isn't, the error message 
+will be displayed and the next base will be checked. Once a satisfying base 
+has
+ been found the change_base call will change the base. This is realized through 
+the divide instruction that receives as parameters the dividend, the divisor and 
+a pointer to the address reserved on the stack where the rest will be saved 
+through lateral effect following the division. The procedure mentioned above will 
+return how much you divide. The rest is taken from the reserved address on the 
+stack and it is placed inside a memory in a vector. Following the repeated 
+divisions, when the result reaches 0, the vector will finally be displayed in 
+reversed order and any other rest bigger than 10 will be converted to char 
+through the jump to the printchar tag. 
 ===============================================================================
 ===============================================================================
-
 Sidenotes: 
-	PRINT_CHAR este buguit, poate modifica memoria, daca se sterg dw si db de la
-finalul sectiunii .data la anumite inputuri in urma operatiei PRINT_CHAR se 
-modifica memoria urmand ca ulterior sa apara SEGFAULT. Nu stiu dc se intampla 
-asta dar a fost f enervant la debugging pt ca nici in ruptul capului nu ma 
-gandeam ca macroul oferit de SASM ar avea erori. Acelas comportament l-am avut
-si pe masina virtuala de IOCLA si pe masina locala.
+	PRINT_CHAR is bugged, it can modify the memory. If the dw and db are 
+deleted from the end of the .data section, at certain inputs, following the 
+PRINT_CHAR operation, the memory is modified. Afterwards, the SEGFAULT appears.
 
 ===============================================================================
 ===============================================================================
